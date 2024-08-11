@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Flickity CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
+    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        .carousel-cell {
+            width: 100%;
+            height: 400px;
+            margin: 0 10px;
+            background: #8C8;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2em;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .icon-badge {
+            background-color: #28a745;
+            color: white;
+            padding: 0.2em 0.5em;
+            border-radius: 0.25rem;
+            font-size: 0.75em;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-cell {
+                height: 200px;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Default styles for carousel buttons */
+        .carousel-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        /* Styles for small screens */
+        @media (max-width: 768px) {
+            .carousel-button {
+                padding: 5px 10px;
+                font-size: 10px;
+                border-radius: 3px;
+            }
+        }
+
+        /* Additional styling for button hover effects */
+        .carousel-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* my css */
+        body {
+            background-color: rgb(255, 255, 255) !important;
+        }
+
+        .nav-link,
+        .navbar-brand {
+            color: darkblue !important;
+            font-family: 'Times New Roman', Times, serif, bold !important;
+
+        }
+
+        .navbar-toggler {
+            color: rgb(255, 255, 255) !important;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: darkblue !important;
+        }
+
+        div {
+
+            font-family: "Roboto", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white border-bottom ">
+        <div class="container ">
+            <a class="navbar-brand" href="#"> <img src="https://gemclasses.com/wp-content/uploads/2019/08/gem-logo.jpeg"
+                    alt="" width="50px"> &nbsp;&nbsp;Gem Class Pvt.Ltd</a>
+            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#admissions">Admissions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Homepage Section -->
+    <section id="home" class="container my-3">
+        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
+            <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-24-at-15.49.43.jpeg"
+                class="carousel-cell bg-primary">
+
+            </img>
+            <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-24-at-15.37.46.jpeg"
+                class="carousel-cell bg-primary">
+
+            </img>
+            <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-24-at-17.40.10.jpeg"
+                class="carousel-cell bg-primary">
+
+            </img>
+
+        </div>
+        <div class="mt-5 card p-3">
+            <h2>Welcome to EduSite</h2>
+            <p>Our mission is to provide quality education to all. Check out our latest news and upcoming events!</p>
+            <button class="btn btn-primary">Enroll Now</button>
+        </div>
+    </section>
+
+
+
+    <!-- About Us Section -->
+    <section id="about" class="container my-5">
+        <!-- <h2>About Us</h2>
+        <p>Our institution has a rich history of providing education and fostering innovation. We are accredited and
+            partnered with top organizations worldwide.</p> -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="p-3">
+                    <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-01-at-10.51.06-PM-e1688295146931.jpeg"
+                        class="img-fluid" alt="Campus Image" width="400">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3>Our Story</h3>
+                <p>YOU HAVE CHOICE NOW
+                    WE KNOW THE DIRECTION, IF YOU HAVE DEDICATION
+                    Pioneer in itself in the preparation of Engineering and Medical Entrance Examination across the
+                    country with a pool of eminent Faculties who have extensive experience in the field of competitive
+                    environment.
+
+                    GEM Classes, Bansur is one of the premier coaching institute of India, providing classroom and
+                    Digital Learning Program for JEE-Main / Advanced, NEET-UG and Early Lead Pre Foundation courses from
+                    class VIII to X to help the juvenile mind for success in various Competitive Examinations such as
+                    NTSE, KVPY and Olympiads along with their School Board Exams.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="bg-light py-5">
+        <div class="container">
+            <h2>Admissions</h2>
+            <p>Join us and become part of a vibrant learning community. Follow our easy application process and start
+                your journey with us.</p>
+            <ul class="nav nav-tabs" id="admissionsTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="undergrad-tab" data-bs-toggle="tab" data-bs-target="#undergrad"
+                        type="button" role="tab" aria-controls="undergrad" aria-selected="true">Undergraduate</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="grad-tab" data-bs-toggle="tab" data-bs-target="#grad" type="button"
+                        role="tab" aria-controls="grad" aria-selected="false">Graduate</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="admissionsTabContent">
+                <div class="tab-pane fade show active" id="undergrad" role="tabpanel" aria-labelledby="undergrad-tab">
+                    <h3>Undergraduate Programs</h3>
+                    <p>Explore our diverse undergraduate programs designed to ignite your passion for learning and
+                        innovation.</p>
+                </div>
+                <div class="tab-pane fade" id="grad" role="tabpanel" aria-labelledby="grad-tab">
+                    <h3>Graduate Programs</h3>
+                    <p>Pursue advanced studies in your field of interest with our research-driven graduate programs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <section class="container my-5">
+            <div class="row text-center align-items-center">
+                <!-- Image Column -->
+                <div class="col-md-4 mb-4">
+                    <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-05-20-at-10.12.42-PM-1-768x1024.jpeg"
+                        class="img-fluid rounded" alt="Faculty Image" loading="lazy" />
+                </div>
+                <!-- Icon Boxes Column -->
+                <div class="col-md-4 mb-4">
+                    <!-- Icon Box 1 -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="far fa-lightbulb fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="card-title">Highly Experienced Faculty</h5>
+                                    <p class="card-text">
+                                        GEM has the best team of highly experienced faculty members. Most of the faculty
+                                        members are either IITians or PG from reputed Universities.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Icon Box 2 -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <a href="https://gemclasses.com/doubt-removal-build-your-own-concept/">
+                                        <i class="fas fa-pen fa-2x text-primary"></i>
+                                    </a>
+                                </div>
+                                <div>
+                                    <h5 class="card-title">
+                                        <a href="https://gemclasses.com/doubt-removal-build-your-own-concept/"
+                                            class="text-decoration-none">
+                                            Problem Solving Counters
+                                        </a>
+                                    </h5>
+                                    <p class="card-text">
+                                        To assist students even outside the class and to remove their personal doubts,
+                                        we have developed a concept of Problem Solving Counters.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Icon Boxes Column -->
+                <div class="col-md-4 mb-4">
+                    <!-- Icon Box 3 -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-book fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="card-title">Scheduled Periodic Tests</h5>
+                                    <p class="card-text">
+                                        GEM conducts scheduled periodic test series on the latest pattern of various
+                                        Medical & entrance exams. Regular test series increase speed and accuracy.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Icon Box 4 -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="me-3">
+                                    <i class="fas fa-book-reader fa-2x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="card-title">Result Oriented Study Material</h5>
+                                    <p class="card-text">
+                                        The study material of GEM is prepared by expert faculty. It is simplified for
+                                        easy comprehension and its content prepares students for examinations.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </section>
+    <section>
+        <style>
+            /* Custom styles */
+            .premium-title-header {
+                color: #000080;
+            }
+
+            .elementor-divider {
+                margin: 30px 0;
+                border: none;
+                border-top: 2px solid #000080;
+                overflow: hidden;
+            }
+
+            .premium-dual-header-first-header {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 20px;
+                color: #000080;
+            }
+
+            .premium-title-container {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .elementor-text-editor {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 20px;
+                color: #993366;
+            }
+
+            .faq-title {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 30px;
+            }
+        </style>
+
+        <div class="container">
+            <!-- Header Section -->
+            <div class="text-center my-5">
+                <h2 class="premium-dual-header-first-header">
+                    <span>Go ahead to shine </span><span class="premium-dual-header-second-header">gem classes</span>
+                </h2>
+                <div class="elementor-divider"></div>
+            </div>
+
+            <!-- Features Section -->
+            <section class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="premium-title-container">
+                        <h3 class="premium-title-header">Effective Teaching Methods</h3>
+                    </div>
+                    <div class="elementor-text-editor">
+                        <p>GEM Classes believe in interactive and engaging teaching methods that go beyond traditional
+                            lectures. Our faculty members use multimedia presentations, practical examples, and
+                            real-life applications to make the learning experience interesting and enjoyable. We also
+                            conduct regular doubt-solving sessions and mock tests to assess students’ progress and
+                            identify areas for improvement.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="premium-title-container">
+                        <h3 class="premium-title-header">Personalized Attention</h3>
+                    </div>
+                    <div class="elementor-text-editor">
+                        <p>We understand that every student is unique and has different learning needs. That’s why we
+                            maintain small batch sizes to ensure personalized attention to each student. Our faculty
+                            members are approachable and readily available to clarify doubts and provide guidance. We
+                            believe in nurturing the potential of each student and helping them overcome their
+                            weaknesses.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Infrastructure and Track Record Section -->
+            <section class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="premium-title-container">
+                        <h3 class="premium-title-header">State-of-the-Art Infrastructure</h3>
+                    </div>
+                    <div class="elementor-text-editor">
+                        <p>GEM Classes boasts state-of-the-art infrastructure to create a conducive learning
+                            environment. Our classrooms are equipped with modern teaching aids and technology to enhance
+                            the learning experience. We also have a well-stocked library and a dedicated study area
+                            where students can revise and practice at their own pace.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="premium-title-container">
+                        <h3 class="premium-title-header">Proven Track Record</h3>
+                    </div>
+                    <div class="elementor-text-editor">
+                        <p>When it comes to choosing a coaching for IIT JEE and NEET, results matter. GEM Classes has a
+                            remarkable track record of producing top rankers in IIT JEE and NEET exams. Our students
+                            have consistently secured admissions to prestigious engineering and medical colleges across
+                            the country. We take pride in their success and strive to replicate it with every new batch.
+                        </p>
+                        <p>So if you’re looking for Best IIT Jee and NEET Coaching in Alwar, Rajasthan, GEM Classes is
+                            the Best for this.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enroll and FAQ Section -->
+            <section>
+                <div class="elementor-divider"></div>
+            </section>
+        </div>
+    </section>
+
+    <section>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <style>
+            .faq-header {
+                font-size: 2rem;
+                font-weight: bold;
+                color: #333;
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            /* .accordion-button::after {
+                font-family: "Font Awesome 5 Free";
+
+                font-weight: 900;
+                content: "\f067";
+
+            }
+
+            .accordion-button:not(.collapsed)::after {
+                content: "\f068";
+
+            } */
+
+            .accordion-button {
+                text-align: left;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+
+            .accordion-body {
+                font-size: 1rem;
+            }
+
+            .elementor-spacer-inner {
+                height: 30px;
+                /* Adjust spacer height as needed */
+            }
+        </style>
+        <!-- FAQ Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="faq-header">
+                    <span>FREQUENTLY ASKED QUESTIONS</span>
+                </div>
+                <div class="accordion mt-4" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Can I join GEM Classes if I am in 11th standard?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, absolutely! GEM Classes offers comprehensive coaching for both 11th and 12th
+                                standard students. We have separate batches and study materials designed specifically
+                                for each class. Join us in 11th standard, and we will guide you throughout your IIT JEE
+                                or NEET preparation journey.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Are there any scholarships available for deserving students?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, GEM Classes believes in rewarding deserving students. We offer scholarships based
+                                on merit and performance in our scholarship tests. These scholarships can significantly
+                                reduce the financial burden of coaching fees. <a href="https://gemclasses.com/contact/"
+                                    class="text-decoration-underline">Contact</a> our admission department for more
+                                details on the scholarship programs.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Can I get extra doubt-solving sessions apart from regular classes?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, at GEM Classes, we understand the importance of resolving doubts promptly. Apart
+                                from regular classes, we conduct dedicated doubt-solving sessions where students can ask
+                                their queries and get them clarified by our experienced faculty members. We believe in
+                                providing comprehensive support to our students throughout their preparation.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                What is the success rate of GEM Classes for IIT and NEET exams?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                GEM Classes has an excellent success rate, with a significant number of our students
+                                securing top ranks in IIT JEE and NEET exams. However, it’s important to note that
+                                success depends on factors like students’ dedication, hard work, and consistent efforts.
+                                We provide the necessary guidance and resources, but it’s up to the students to make the
+                                most of it.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Spacer -->
+        <section class="py-3">
+            <div class="container">
+                <div class="elementor-spacer">
+                    <div class="elementor-spacer-inner"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bootstrap 5 JS and Popper.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+    </section>
+
+
+
+
+
+    <section class="bg-white">
+        <!-- Add Bootstrap CSS link in your HTML head -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+        <section class="container-fluid py-4">
+            <div class="row">
+                <!-- Image Column -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <img src="https://gemclasses.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-30-at-4.44.20-PM-1024x792.jpeg"
+                            class="card-img-top img-fluid" alt="GEM Classes" />
+                    </div>
+                </div>
+
+                <!-- Info Column -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class=" p-4">
+                        <h2 class="h4">Welcome to GEM Classes</h2>
+                        <h2 class="h5">+91 9587886161</h2>
+                        <h3 class="h6">GEM Classes is the best IIT JEE and NEET coaching in Alwar, Rajasthan. Get
+                            Admission Now!</h3>
+                        <h2 class="h5 mt-4">School Info:</h2>
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-angle-right"></i> <a
+                                    href="mailto:info@gemclasses.com">info@gemclasses.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-angle-right"></i> +91 9587886161
+                            </li>
+                            <li>
+                                <i class="fas fa-angle-right"></i> +91 9587886162
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Working Hours Column -->
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <div class=" p-4">
+                        <h2 class="h4">Working Hours</h2>
+                        <ul class="list-unstyled">
+                            <li>
+                                <span class="font-weight-bold">Mon-Sat:</span> 8:00 - 20:00
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Add Bootstrap JS and FontAwesome for icons -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container my-5">
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to our admissions team for more information.</p>
+        <form>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-dark text-light pt-4">
+        <div class="container">
+            <div class="row">
+                <!-- Introduction Section -->
+                <div class="col-md-4">
+                    <h5>Welcome to GEM Classes</h5>
+                    <p>We provide comprehensive training and support for students preparing for IIT-JEE, AIIMS, NEET,
+                        and NIT exams. Our institute is dedicated to helping students achieve their dreams of getting
+                        into the best engineering, medical and technology colleges in the country.</p>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-md-4">
+                    <h5>Connect with Us</h5>
+                    <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" class="text-light me-3"><i class="fab fa-youtube"></i> Youtube</a>
+                    <a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="col-md-4">
+                    <h5>Get Started</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Home</a></li>
+                        <li><a href="#" class="text-light">About Us</a></li>
+                        <li><a href="#" class="text-light">Careers at GEM</a></li>
+                        <li><a href="#" class="text-light">Apply Online</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4 text-light">
+
+            <div class="row">
+                <!-- Additional Information -->
+                <div class="col-md-4">
+                    <h5>About</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Introduction</a></li>
+                        <li><a href="#" class="text-light">Pre Engineering Division</a></li>
+                        <li><a href="#" class="text-light">Pre Medical Division</a></li>
+                        <li><a href="#" class="text-light">XI-XII Foundation Division</a></li>
+                    </ul>
+                </div>
+
+                <!-- Useful Links -->
+                <div class="col-md-4">
+                    <h5>Useful Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Why GEM Classes</a></li>
+                        <li><a href="#" class="text-light">Vision, Values, and Mission</a></li>
+                        <li><a href="#" class="text-light">GEM Campus</a></li>
+                        <li><a href="#" class="text-light">Message from Director</a></li>
+                        <li><a href="#" class="text-light">Location & Direction Of GEM</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="text-center py-3">
+                <small>GOVINDAM ENGINEERING AND MEDICAL GEM CLASSES PVT. LTD.© All rights reserved</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and Flickity JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-eMNnbWkz88wFwk8SikmUPwp3uCcT0FrgWjH/LRNDQemynmyD5Oztp5yiCyb7wi38"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+</body>
+
+</html>
