@@ -326,31 +326,6 @@
             padding: 5px;
             /* Optional: spacing between images */
         }
-
-        /* Responsive Images */
-        .carousel-cell img {
-            display: block;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 5px;
-            /* Optional: rounded corners */
-        }
-
-        /* Media Queries for Larger Screens */
-        @media (min-width: 768px) {
-            .carousel-cell {
-                width: 100%;
-                /* Two slides per view on tablets */
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .carousel-cell {
-                width: 100.33%;
-                /* Three slides per view on desktops */
-            }
-        }
     </style>
 </head>
 
@@ -367,7 +342,7 @@
     <!-- date time -->
 
     <!-- Navbar Start -->
-    <div class="navbar  bg-dark py-1 ">
+    <div class="bg-dark py-1 ">
         <div class="container">
             <div class="row">
                 <div class="d-flex text-white justify-content-end justify-content-lg-end" style="font-size: 10px;">
@@ -595,6 +570,8 @@
         </div>
     </section>
 
+
+
     <!-- Admissions Section -->
     <section id="admissions" class="bg-light py-5">
         <div class="container">
@@ -612,7 +589,8 @@
                 </li>
             </ul>
             <div class="tab-content" id="admissionsTabContent">
-                <div class="tab-pane fade show active" id="undergrad" role="tabpanel" aria-labelledby="undergrad-tab">
+                <div class="tab-pane fade show active card p-3 m-2" id="undergrad" role="tabpanel"
+                    aria-labelledby="undergrad-tab">
                     <h3>Undergraduate Programs</h3>
                     <p>Explore our diverse undergraduate programs designed to ignite your passion for learning and
                         innovation.GEM Classes believe in interactive and engaging teaching methods that go beyond
@@ -621,7 +599,7 @@
                         conduct regular doubt-solving sessions and mock tests to assess students’ progress and identify
                         areas for improvement.</p>
                 </div>
-                <div class="tab-pane fade" id="grad" role="tabpanel" aria-labelledby="grad-tab">
+                <div class="tab-pane fade card p-3 m-2" id="grad" role="tabpanel" aria-labelledby="grad-tab">
                     <h3>Graduate Programs</h3>
                     <p>Pursue advanced studies in your field of interest with our research-driven graduate programs.GEM
                         Classes believe in interactive and engaging teaching methods that go beyond traditional
@@ -634,7 +612,101 @@
             </div>
         </div>
     </section>
+
+
+
     <section>
+        <style>
+            .iitjee-student-info {
+                padding: 15px;
+                text-align: center;
+            }
+
+            .iitjee-student-name {
+                font-size: 1.25rem;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            .iitjee-student-rank {
+                font-size: 1rem;
+                color: #666;
+            }
+
+            /* Hover Effects */
+
+
+            /* Optional: Add a background color to cards */
+            .iitjee-carousel-item {
+                background-color: #ffffff;
+                /* Light background for contrast */
+                border-radius: 10px;
+                margin: 300px;
+            }
+
+            .iitjee-carousel-item:hover {
+                background-color: #060060;
+                color: white;
+
+            }
+        </style>
+
+        <div class="container-fluid ">
+            <div class="row text-center pt-3">
+                <div class="col-12 ">
+                    <span>
+                        <h1>STUDENT RANK's</h1>
+                    </span>
+                </div>
+            </div>
+            <div class="carousel "
+                data-flickity='{ "freeScroll": true,"contain": true,"prevNextButtons": false,"pageDots": false }'>
+                <div class="iitjee-carousel-item card p-3 m-2">
+                    <div class="iitjee-student-card ">
+                        <img src="https://via.placeholder.com/300.png?text=Student+1" alt="Amit Sharma, Rank 45"
+                            class="iitjee-student-img">
+                        <div class="iitjee-student-info">
+                            <h5 class="iitjee-student-name">Amit Sharma</h5>
+                            <p class="iitjee-student-rank">Rank: 45</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="iitjee-carousel-item card p-3 m-2">
+                    <div class="iitjee-student-card">
+                        <img src="https://via.placeholder.com/300.png?text=Student+2" alt="Neha Gupta, Rank 78"
+                            class="iitjee-student-img">
+                        <div class="iitjee-student-info">
+                            <h5 class="iitjee-student-name">Neha Gupta</h5>
+                            <p class="iitjee-student-rank">Rank: 78</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="iitjee-carousel-item card p-3 m-2">
+                    <div class="iitjee-student-card">
+                        <img src="https://via.placeholder.com/300.png?text=Student+3" alt="Rajesh Singh, Rank 30"
+                            class="iitjee-student-img">
+                        <div class="iitjee-student-info">
+                            <h5 class="iitjee-student-name">Rajesh Singh</h5>
+                            <p class="iitjee-student-rank">Rank: 30</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="iitjee-carousel-item card p-3 m-2">
+                    <div class="iitjee-student-card">
+                        <img src="https://via.placeholder.com/300.png?text=Student+4" alt="Pooja Verma, Rank 50"
+                            class="iitjee-student-img">
+                        <div class="iitjee-student-info">
+                            <h5 class="iitjee-student-name">Pooja Verma</h5>
+                            <p class="iitjee-student-rank">Rank: 50</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section>
+        <!-- Feature and Image Section -->
         <section class="container my-5">
             <div class="row text-center align-items-center">
                 <!-- Image Column -->
@@ -642,82 +714,94 @@
                     <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-05-20-at-10.12.42-PM-1-768x1024.jpeg"
                         class="img-fluid op_img" alt="Faculty Image" loading="lazy" />
                 </div>
-                <!-- Icon Boxes Column -->
+                <!-- Icon Boxes Column 1 -->
                 <div class="col-md-4 mb-4">
                     <!-- Icon Box 1 -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">
-                                    <i class="far fa-lightbulb fa-2x text-primary"></i>
-                                </div>
-                                <div>
-                                    <h5 class="card-title">Highly Experienced Faculty</h5>
-                                    <p class="card-text">
-                                        GEM has the best team of highly experienced faculty members. Most of the faculty
-                                        members are either IITians or PG from reputed Universities.
-                                    </p>
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <i class="far fa-lightbulb fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">Highly Experienced Faculty</h5>
+                                        <p class="feature-text">
+                                            Our IIT JEE coaching boasts a team of highly experienced faculty members,
+                                            including IITians and PG graduates from reputed universities, ensuring
+                                            top-notch guidance for your preparation.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Icon Box 2 -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">
-                                    <a href="https://gemclasses.com/doubt-removal-build-your-own-concept/">
-                                        <i class="fas fa-pen fa-2x text-primary"></i>
-                                    </a>
-                                </div>
-                                <div>
-                                    <h5 class="card-title">
-                                        <a href="https://gemclasses.com/doubt-removal-build-your-own-concept/"
-                                            class="text-decoration-none">
-                                            Problem Solving Counters
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <a href="https://gemclasses.com/doubt-removal-build-your-own-concept/">
+                                            <i class="fas fa-pen fa-2x text-primary"></i>
                                         </a>
-                                    </h5>
-                                    <p class="card-text">
-                                        To assist students even outside the class and to remove their personal doubts,
-                                        we have developed a concept of Problem Solving Counters.
-                                    </p>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">
+                                            <a href="https://gemclasses.com/doubt-removal-build-your-own-concept/"
+                                                class="text-decoration-none">
+                                                Problem Solving Counters
+                                            </a>
+                                        </h5>
+                                        <p class="feature-text">
+                                            To assist students beyond classroom hours and resolve their personal doubts,
+                                            we've developed the innovative Problem Solving Counters concept, enhancing
+                                            their problem-solving skills effectively.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Icon Boxes Column -->
+                <!-- Icon Boxes Column 2 -->
                 <div class="col-md-4 mb-4">
                     <!-- Icon Box 3 -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">
-                                    <i class="fas fa-book fa-2x text-primary"></i>
-                                </div>
-                                <div>
-                                    <h5 class="card-title">Scheduled Periodic Tests</h5>
-                                    <p class="card-text">
-                                        GEM conducts scheduled periodic test series on the latest pattern of various
-                                        Medical & entrance exams. Regular test series increase speed and accuracy.
-                                    </p>
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-book fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">Scheduled Periodic Tests</h5>
+                                        <p class="feature-text">
+                                            We conduct regularly scheduled periodic tests modeled on the latest IIT JEE
+                                            patterns, helping students track their progress and improve their speed and
+                                            accuracy.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Icon Box 4 -->
-                    <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body">
-                            <div class="d-flex align-items-center">
-                                <div class="me-3">
-                                    <i class="fas fa-book-reader fa-2x text-primary"></i>
-                                </div>
-                                <div>
-                                    <h5 class="card-title">Result Oriented Study Material</h5>
-                                    <p class="card-text">
-                                        The study material of GEM is prepared by expert faculty. It is simplified for
-                                        easy comprehension and its content prepares students for examinations.
-                                    </p>
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-book-reader fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">Comprehensive Study Material</h5>
+                                        <p class="feature-text">
+                                            Our study materials are meticulously prepared by expert faculty, simplified
+                                            for easy comprehension, and designed to thoroughly prepare students for the
+                                            IIT JEE examinations.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
