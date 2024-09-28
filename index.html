@@ -2,229 +2,443 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Educational Website</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Opsoft Server : Login</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/icon.png" rel="icon">
     <!-- Flickity CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
-    <!-- Custom CSS -->
+    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
         rel="stylesheet">
+    <!-- animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
     <style>
-        .carousel-cell {
+        @keyframes fadeInAndScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .op_img {
+            animation: fadeInAndScale 2s ease-in-out;
+            border-radius: 20px;
+        }
+
+
+
+
+
+        .scrolling-bar {
+
             width: 100%;
-            height: 400px;
-            margin: 0 10px;
-            background: #8C8;
-            border-radius: 5px;
+            /* Full-width */
+            overflow: hidden;
+            /* Hide the overflow content */
+            white-space: nowrap;
+            /* Prevents the text from wrapping */
+            box-sizing: border-box;
+            background-color: #001a61;
+            /* Optional background */
+            padding-top: 1%;
+
+        }
+
+        .scrolling-bar-box {
+
+            background-color: #fb873f;
+        }
+
+        .scrolling-bar p {
+            display: inline-block;
+
+            /* Start text off-screen to the right */
+            animation: scroll 20s linear infinite;
+            color: white;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(100%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        /* box css */
+        /* Container Box */
+        .card-box {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #e3f2fd;
+            /* Light blue background for icon */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .icon-box i {
+            transition: color 0.3s ease;
+        }
+
+        .card-box:hover .icon-box {
+            background-color: #1976d2;
+            /* Darker blue on hover */
+            transform: scale(1.1);
+            /* Slightly enlarge the icon on hover */
+        }
+
+        .card-box:hover .icon-box i {
+            color: #fff;
+            /* Icon color change on hover */
+        }
+
+        /* Card Title */
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Hover Effects */
+        .card-box:hover .card-title {
+            color: #1976d2;
+        }
+
+        /* Box Shadow */
+        .card {
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animation for the box (fade-in and slight up move) */
+        .card-box {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+
+
+        /* General container for the feature boxes */
+        .feature-box {
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+
+        }
+
+        /* Card styling */
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            background-color: #200147;
+            color: white;
+        }
+
+        .feature-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        /* Flex container for icon and content */
+        .feature-flex {
             display: flex;
             align-items: center;
+        }
+
+        /* Icon container */
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
             justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+
+            /* Light blue background for icon */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .feature-icon i {
+            transition: color 0.3s ease;
+            margin-right: 10px;
+        }
+
+
+
+        /* Hover effects on icon */
+        .feature-box:hover .feature-icon {
+
+            /* Darker blue background on hover */
+            transform: scale(1.1);
+            /* Slightly enlarge the icon on hover */
+
+
+        }
+
+        .feature-box:hover .feature-icon i {
+            color: #fff;
+            /* Change icon color on hover */
+        }
+
+        /* Title styling */
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            transition: color 0.3s ease;
+
+        }
+
+        /* Text styling */
+        .feature-text {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+
+
+        /* Hover effect for title */
+        .feature-box:hover .feature-title {
+            color: #92c9ff;
+
+        }
+
+        .feature-box:hover .feature-text {
             color: white;
-            font-size: 2em;
+
         }
 
-        .navbar-nav .nav-link {
-            color: white;
+        /* carouser */
+
+        /* Carousel Container */
+        .carousel {
+            width: 100%;
+            margin: 0 auto;
         }
 
-        .icon-badge {
-            background-color: #28a745;
-            color: white;
-            padding: 0.2em 0.5em;
-            border-radius: 0.25rem;
-            font-size: 0.75em;
+        /* Carousel Cells */
+        .carousel-cell {
+            /* Default width for mobile: all images visible */
+            width: 100%;
+            /* Adjust based on the number of images */
+            padding: 5px;
+            /* Optional: spacing between images */
         }
 
-        @media (max-width: 768px) {
-            .carousel-cell {
-                height: 200px;
-            }
-        }
-
-        img {
-            max-width: 100%;
+        /* Responsive Images */
+        .carousel-cell img {
+            display: block;
+            width: 100%;
             height: auto;
-        }
-
-        /* Default styles for carousel buttons */
-        .carousel-button {
-            padding: 10px 20px;
-            font-size: 16px;
+            object-fit: cover;
             border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            margin: 10px;
+            /* Optional: rounded corners */
         }
 
-        /* Styles for small screens */
-        @media (max-width: 768px) {
-            .carousel-button {
-                padding: 5px 10px;
-                font-size: 10px;
-                border-radius: 3px;
+        /* Media Queries for Larger Screens */
+        @media (min-width: 768px) {
+            .carousel-cell {
+                width: 100%;
+                /* Two slides per view on tablets */
             }
         }
 
-        /* Additional styling for button hover effects */
-        .carousel-button:hover {
-            background-color: #0056b3;
-        }
-
-
-        /* my css */
-        body {
-            background: rgb(190, 0, 255);
-            background: linear-gradient(90deg, rgba(190, 0, 255, 1) 0%, rgba(85, 85, 255, 1) 51%, rgba(190, 244, 255, 1) 100%) !important;
-        }
-
-        .nav-link,
-        .navbar-brand {
-            color: darkblue !important;
-            font-family: 'Times New Roman', Times, serif, bold !important;
-
-        }
-
-        .navbar-toggler {
-            color: rgb(255, 255, 255) !important;
-            font-family: 'Times New Roman', Times, serif;
-            background-color: darkblue !important;
-        }
-
-        div {
-
-            font-family: "Roboto", sans-serif;
-            font-weight: 300;
-            font-style: normal;
-
-
+        @media (min-width: 1024px) {
+            .carousel-cell {
+                width: 100.33%;
+                /* Three slides per view on desktops */
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- start loader -->
-    <section>
-        <style>
-            /* styles.css */
-
-            /* Loader styles */
-            .loader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgb(255, 255, 255);
-                /* Semi-transparent white background */
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 1000;
-                /* Ensure loader is on top of everything */
-            }
-
-            .loader-icon {
-                /* HTML: <div class="loader"></div> */
-
-                width: 40px;
-                height: 40px;
-                --c: no-repeat linear-gradient(#5470ff 0 0);
-                background: var(--c), var(--c), var(--c), var(--c);
-                background-size: 21px 21px;
-                animation: l5 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
-            }
-
-            @keyframes l5 {
-                0% {
-                    background-position: 0 0, 100% 0, 100% 100%, 0 100%
-                }
-
-                33% {
-                    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
-                    width: 60px;
-                    height: 60px
-                }
-
-                66% {
-                    background-position: 100% 0, 100% 100%, 0 100%, 0 0;
-                    width: 60px;
-                    height: 60px
-                }
-
-                100% {
-                    background-position: 100% 0, 100% 100%, 0 100%, 0 0
-                }
-            }
-
-
-            /* Hide loader when content is loaded */
-            .loaded .loader {
-                display: none;
-            }
-        </style>
-        <!-- Loader -->
-        <div class="loader">
-            <!-- You can customize the loader animation or icon here -->
-            <div class="loader-icon"></div>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
+    </div>
+    <!-- Spinner End -->
 
-        <script>
-            // script.js
+    <!-- date time -->
 
-            // Function to hide the loader when all content is loaded
-            window.addEventListener('load', function () {
-                const loader = document.querySelector('.loader');
-                loader.parentElement.classList.add('loaded'); // Add 'loaded' class to the parent element of loader
-            });
+    <!-- Navbar Start -->
+    <div class="navbar  bg-dark py-1 ">
+        <div class="container">
+            <div class="row">
+                <div class="d-flex text-white justify-content-end justify-content-lg-end" style="font-size: 10px;">
 
-        </script>
+                    <span id="date" class="">info@gemclasses.com</span> &nbsp; | &nbsp;
+                    <span>CONATCT US : (+91)8805406514</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 ">
 
-    </section>
-    <!-- loader end -->
-
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-white border-bottom ">
-        <div class="container ">
-            <a class="navbar-brand" href="#"> <img src="https://gemclasses.com/wp-content/uploads/2019/08/gem-logo.jpeg"
-                    alt="" width="50px"> &nbsp;&nbsp;Gem Class Pvt.Ltd</a>
-            <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#courses">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#admissions">Admissions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <p class="m-0 fw-bold" style="font-size: 20px;"><img
+                    src="https://gemclasses.com/wp-content/uploads/2019/08/gem-logo.jpeg" alt=""
+                    height="40px">&nbsp;&nbsp;&nbsp;GEM<span style="color: #fb873f;"> CLASS PVT.LTD</span></p>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            style="border: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <!-- <a href="courses.html" class="nav-item nav-link">Courses</a> -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu fade-down m-0">
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                    </div>
+                </div>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="login.html" class="nav-item nav-link"><i class="fa fa-user"></i></a>
+                <a href="#" class="nav-item nav-link">
+                    <div id="google_translate_element"></div>
+                </a>
             </div>
         </div>
     </nav>
+    <!-- Navbar End -->
+
+
+
+    <div class="scrolling-bar ">
+        <span style=" position: relative; z-index: 1; width:70px; height: 50px; top: 75px; padding-top: 100%;
+            padding-bottom: 100%; background-color: #ff6200; ">
+            News
+
+
+        </span>
+
+        <p style="position: relative; z-index: 0;">Welcome to gem classes pvt.ltd This is a scrolling text moving
+            from
+            right to
+            left. Our
+            mission is to
+            provide
+            quality education to all.
+            Check
+            out our latest news and upcoming events!</p>
+    </div>
+
+
+
 
     <!-- Homepage Section -->
-    <section id="home" class="container my-3">
-        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": 3000 }'>
+    <section id="home" class="container-fluid my-3">
+        <div class="carousel"
+            data-flickity='{ "wrapAround": true, "autoPlay": 3000,"freeScroll":true,"adaptiveHeight":true }'>
             <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-24-at-15.49.43.jpeg"
                 class="carousel-cell bg-primary">
 
@@ -233,17 +447,122 @@
                 class="carousel-cell bg-primary">
 
             </img>
-            <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-24-at-17.40.10.jpeg"
+            <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-24-at-15.49.43.jpeg"
                 class="carousel-cell bg-primary">
 
             </img>
 
         </div>
-        <div class="mt-5 card p-3">
+        <!-- <div class="mt-5 card p-3">
             <h2>Welcome to EduSite</h2>
             <p>Our mission is to provide quality education to all. Check out our latest news and upcoming events!</p>
             <button class="btn btn-primary">Enroll Now</button>
+        </div> -->
+
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <!-- Icon Box 1 -->
+                <div class="col-lg-3 col-12">
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <i class="far fa-lightbulb fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">Highly Experienced Faculty</h5>
+                                        <p class="feature-text">
+                                            GEM has the best team of highly experienced faculty members. Most of the
+                                            faculty
+                                            members are either IITians or PG from reputed Universities.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box 2 -->
+                <div class="col-lg-3 col-12">
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <a href="https://gemclasses.com/doubt-removal-build-your-own-concept/">
+                                            <i class="fas fa-pen fa-2x text-primary"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">
+
+
+                                            Problem Solving Counters
+
+                                        </h5>
+                                        <p class="feature-text">
+                                            To assist students even outside the class and to remove their personal
+                                            doubts,
+                                            we have developed a concept of Problem Solving Counters.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box 3 -->
+                <div class="col-lg-3 col-12">
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-book fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">Scheduled Periodic Tests</h5>
+                                        <p class="feature-text">
+                                            GEM conducts scheduled periodic test series on the latest pattern of various
+                                            Medical & entrance exams. Regular test series.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Box 4 -->
+                <div class="col-lg-3 col-12">
+                    <div class="feature-box">
+                        <div class="feature-card">
+                            <div class="feature-body">
+                                <div class="feature-flex">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-book-reader fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="feature-title">Study Material</h5>
+                                        <p class="feature-text">
+                                            The study material of GEM is prepared by expert faculty. It is simplified
+                                            for
+                                            easy comprehension and its content prepares of exam.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
+
     </section>
 
 
@@ -254,13 +573,13 @@
         <p>Our institution has a rich history of providing education and fostering innovation. We are accredited and
             partnered with top organizations worldwide.</p> -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 ">
                 <div class="p-3">
                     <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-01-at-10.51.06-PM-e1688295146931.jpeg"
-                        class="img-fluid" alt="Campus Image" width="400">
+                        class="img-fluid op_img" alt="Campus Image" width="400">
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 card p-5">
                 <h3>Our Story</h3>
                 <p>YOU HAVE CHOICE NOW
                     WE KNOW THE DIRECTION, IF YOU HAVE DEDICATION
@@ -296,11 +615,20 @@
                 <div class="tab-pane fade show active" id="undergrad" role="tabpanel" aria-labelledby="undergrad-tab">
                     <h3>Undergraduate Programs</h3>
                     <p>Explore our diverse undergraduate programs designed to ignite your passion for learning and
-                        innovation.</p>
+                        innovation.GEM Classes believe in interactive and engaging teaching methods that go beyond
+                        traditional lectures. Our faculty members use multimedia presentations, practical examples, and
+                        real-life applications to make the learning experience interesting and enjoyable. We also
+                        conduct regular doubt-solving sessions and mock tests to assess students’ progress and identify
+                        areas for improvement.</p>
                 </div>
                 <div class="tab-pane fade" id="grad" role="tabpanel" aria-labelledby="grad-tab">
                     <h3>Graduate Programs</h3>
-                    <p>Pursue advanced studies in your field of interest with our research-driven graduate programs.
+                    <p>Pursue advanced studies in your field of interest with our research-driven graduate programs.GEM
+                        Classes believe in interactive and engaging teaching methods that go beyond traditional
+                        lectures. Our faculty members use multimedia presentations, practical examples, and real-life
+                        applications to make the learning experience interesting and enjoyable. We also conduct regular
+                        doubt-solving sessions and mock tests to assess students’ progress and identify areas for
+                        improvement.
                     </p>
                 </div>
             </div>
@@ -312,7 +640,7 @@
                 <!-- Image Column -->
                 <div class="col-md-4 mb-4">
                     <img src="https://gemclasses.com/wp-content/uploads/2023/07/WhatsApp-Image-2023-05-20-at-10.12.42-PM-1-768x1024.jpeg"
-                        class="img-fluid rounded" alt="Faculty Image" loading="lazy" />
+                        class="img-fluid op_img" alt="Faculty Image" loading="lazy" />
                 </div>
                 <!-- Icon Boxes Column -->
                 <div class="col-md-4 mb-4">
@@ -655,164 +983,241 @@
     </section>
 
 
-
-
-
-    <section class="bg-white">
-        <!-- Add Bootstrap CSS link in your HTML head -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-        <section class="container-fluid py-4">
-            <div class="row">
-                <!-- Image Column -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="https://gemclasses.com/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-30-at-4.44.20-PM-1024x792.jpeg"
-                            class="card-img-top img-fluid" alt="GEM Classes" />
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Quick Link</h4>
+                    <p><a class="text-light" href="about.html">About Us</a></p>
+                    <p><a class="text-light" href="contact.html">Contact Us</a></p>
+                    <p><a class="text-light" href="">Privacy Policy</a></p>
+                    <p><a class="text-light" href="">Terms & Condition</a></p>
+                    <p><a class="text-light" href="">FAQs & Help</a></p>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Contact</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, Bangalore, Karnataka</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8683045908</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>opsoftserver@gmail.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
 
-                <!-- Info Column -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class=" p-4">
-                        <h2 class="h4">Welcome to GEM Classes</h2>
-                        <h2 class="h5">+91 9587886161</h2>
-                        <h3 class="h6">GEM Classes is the best IIT JEE and NEET coaching in Alwar, Rajasthan. Get
-                            Admission Now!</h3>
-                        <h2 class="h5 mt-4">School Info:</h2>
-                        <ul class="list-unstyled">
-                            <li>
-                                <i class="fas fa-angle-right"></i> <a
-                                    href="mailto:info@gemclasses.com">info@gemclasses.com</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-angle-right"></i> +91 9587886161
-                            </li>
-                            <li>
-                                <i class="fas fa-angle-right"></i> +91 9587886162
-                            </li>
-                        </ul>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+                    <p>Subscribe now and join our growing community! </p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <form action="#">
+                            <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email"
+                                placeholder="Your email" required>
+                            <button type="submit"
+                                class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"><a
+                                    href="mailto:keertidvcorai@gmail.com">Subscribe</a></button>
+                        </form>
                     </div>
                 </div>
-
-                <!-- Working Hours Column -->
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <div class=" p-4">
-                        <h2 class="h4">Working Hours</h2>
-                        <ul class="list-unstyled">
-                            <li>
-                                <span class="font-weight-bold">Mon-Sat:</span> 8:00 - 20:00
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Add Bootstrap JS and FontAwesome for icons -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-
-        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container my-5">
-        <h2>Contact Us</h2>
-        <p>Have questions? Reach out to our admissions team for more information.</p>
-        <form>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" required>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
-                </div>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-    </section>
-    <!-- Footer -->
-    <footer class="bg-dark text-light pt-4">
-        <div class="container">
-            <div class="row">
-                <!-- Introduction Section -->
-                <div class="col-md-4">
-                    <h5>Welcome to GEM Classes</h5>
-                    <p>We provide comprehensive training and support for students preparing for IIT-JEE, AIIMS, NEET,
-                        and NIT exams. Our institute is dedicated to helping students achieve their dreams of getting
-                        into the best engineering, medical and technology colleges in the country.</p>
-                </div>
-
-                <!-- Social Media Section -->
-                <div class="col-md-4">
-                    <h5>Connect with Us</h5>
-                    <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    <a href="#" class="text-light me-3"><i class="fab fa-youtube"></i> Youtube</a>
-                    <a href="#" class="text-light"><i class="fab fa-instagram"></i> Instagram</a>
-                </div>
-
-                <!-- Navigation Links -->
-                <div class="col-md-4">
-                    <h5>Get Started</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Home</a></li>
-                        <li><a href="#" class="text-light">About Us</a></li>
-                        <li><a href="#" class="text-light">Careers at GEM</a></li>
-                        <li><a href="#" class="text-light">Apply Online</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <hr class="my-4 text-light">
-
-            <div class="row">
-                <!-- Additional Information -->
-                <div class="col-md-4">
-                    <h5>About</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Introduction</a></li>
-                        <li><a href="#" class="text-light">Pre Engineering Division</a></li>
-                        <li><a href="#" class="text-light">Pre Medical Division</a></li>
-                        <li><a href="#" class="text-light">XI-XII Foundation Division</a></li>
-                    </ul>
-                </div>
-
-                <!-- Useful Links -->
-                <div class="col-md-4">
-                    <h5>Useful Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Why GEM Classes</a></li>
-                        <li><a href="#" class="text-light">Vision, Values, and Mission</a></li>
-                        <li><a href="#" class="text-light">GEM Campus</a></li>
-                        <li><a href="#" class="text-light">Message from Director</a></li>
-                        <li><a href="#" class="text-light">Location & Direction Of GEM</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="text-center py-3">
-                <small>GOVINDAM ENGINEERING AND MEDICAL GEM CLASSES PVT. LTD.© All rights reserved</small>
             </div>
         </div>
-    </footer>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="index.html">Opsoft Server</a>, All Right Reserved.
 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <section>
+        <style>
+            .fab-container {
+                position: fixed;
+                bottom: 20px;
+                right: 25px;
+                z-index: 500;
+
+            }
+
+
+            .flutter-fab {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                font-size: 24px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+                transition: background-color 0.3s, box-shadow 0.3s;
+                background-color: #ffffff;
+                color: black;
+
+            }
+
+
+
+
+            /* .flutter-fab:active {
+          background-color: #3700b3;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+          
+        } */
+
+            .fab-icon {
+                font-size: 24px;
+                line-height: 24px;
+            }
+
+            .fab-menu {
+                position: absolute;
+                bottom: 70px;
+                right: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                pointer-events: none;
+
+            }
+
+            .fab-menu-item {
+                width: 50px;
+                height: 50px;
+                margin: 10px 0;
+                background-color: #ffffff;
+                color: #8544e1;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                transform: translateY(60px);
+                transition: opacity 0.3s, transform 0.3s;
+                text-decoration: none !important;
+            }
+
+
+            .fab-menu-item i {
+                font-size: 22px;
+                /* Adjust as needed for icon size */
+                line-height: 2.3;
+                /* Ensures the icon is vertically centered */
+                text-align: center;
+            }
+
+            .fab-menu.show .fab-menu-item {
+                opacity: 1;
+                transform: translateY(0);
+                pointer-events: visible;
+            }
+
+            .fab-menu.show .fab-menu-item:nth-child(1) {
+                transition-delay: 0.1s;
+            }
+
+            .fab-menu.show .fab-menu-item:nth-child(2) {
+                transition-delay: 0.2s;
+            }
+
+            .fab-menu.show .fab-menu-item:nth-child(3) {
+                transition-delay: 0.3s;
+            }
+
+            .flutter-fab:hover {
+                background-color: hsl(0, 0%, 94%);
+                color: rgb(54, 54, 54);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                ;
+            }
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <div class="fab-container">
+            <button class="fab flutter-fab" id="fab">
+                <span class="fab-icon">+</span>
+            </button>
+            <div class="fab-menu" id="fab-menu">
+                <a href="https://wa.me/8805406514" class="fab-menu-item"><i class="fab flutter-fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/obsessedprogrammers/" class="fab-menu-item"><i
+                        class="fab flutter-fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/obsessed-programmers" class="fab-menu-item"><i
+                        class="fab flutter-fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <script>
+            // script.js
+            document.getElementById('fab').addEventListener('click', () => {
+                const menu = document.getElementById('fab-menu');
+                menu.classList.toggle('show');
+
+                // Automatically close the menu after 5 seconds
+                if (menu.classList.contains('show')) {
+                    setTimeout(() => {
+                        menu.classList.remove('show');
+
+                    }, 3000); // 5000 milliseconds = 5 seconds
+                }
+            });
+
+        </script>
+    </section>
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
     <!-- Bootstrap JS and Flickity JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNnbWkz88wFwk8SikmUPwp3uCcT0FrgWjH/LRNDQemynmyD5Oztp5yiCyb7wi38"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
+
+
+
+
+    <!-- Flickity JS -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var carousel = document.querySelector('.carousel');
+            var flkty = new Flickity(carousel, {
+                wrapAround: true,
+                autoPlay: 3000,
+                pageDots: true,
+                adaptiveHeight: true,
+                cellAlign: 'left',
+                percentPosition: true,
+                // Disable dragging to prevent unwanted behavior when all images are visible
+                draggable: false,
+                // Adjust other settings as needed
+            });
+        });
+    </script>
+
+
+
 </body>
 
 </html>
