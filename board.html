@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College News and Resources Board</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnH2N2ew+hfaW3kE2b2dN+6Pb5XQjzUfjS7jwJKjyslgJ23znQe6tqIQhDfAQkP6E4cZMDc1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Styling */
+        .news-resources-section {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .news-resources-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Left Column (Image) */
+        .left-column {
+            flex: 1 1 40%;
+            max-width: 40%;
+            position: relative;
+        }
+
+        .left-column img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .left-column:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Right Column (Tabs) */
+        .right-column {
+            flex: 1 1 60%;
+            max-width: 60%;
+            padding: 30px;
+            background-color: #fff;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            font-weight: 700;
+            color: #007BFF;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: #007BFF;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Tabs Navigation */
+        .premium-tabs-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .premium-tabs-nav-list-item {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .premium-tabs-nav-list-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        .premium-tab-link {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .premium-tab-link:hover {
+            color: #007BFF;
+        }
+
+        .premium-tab-title {
+            margin-top: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Active Tab Styling */
+        .premium-tabs-nav-list-item.active {
+            border-bottom: 3px solid #007BFF;
+            background-color: #f9f9f9;
+        }
+
+        .premium-tabs-nav-list-item.active .premium-tab-link {
+            color: #007BFF;
+        }
+
+        /* Tabs Content */
+        .premium-content-wrap .premium-tabs-content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .premium-content-wrap .premium-tabs-content-section.active {
+            display: block;
+        }
+
+        .premium-tab-content p {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+
+        .premium-tab-content p a {
+            color: #007BFF;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .premium-tab-content p a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .news-resources-section {
+                flex-direction: column;
+            }
+
+            .left-column,
+            .right-column {
+                max-width: 100%;
+                flex: 1 1 100%;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .premium-tab-title {
+                font-size: 0.9rem;
+            }
+
+            .premium-tab-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .premium-tab-title {
+                font-size: 0.85rem;
+            }
+
+            .premium-tab-content p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- News and Resources Board Section -->
+        <section
+            class="news-resources-section elementor-section elementor-top-section elementor-element elementor-element-newnews"
+            data-id="newnews" data-element_type="section">
+            <!-- Left Column - Image -->
+            <div class="left-column elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-leftimg"
+                data-id="leftimg" data-element_type="column">
+                <img src="https://via.placeholder.com/600x400.png?text=College+Image" alt="College Image">
+            </div>
+            <!-- Right Column - Tabs -->
+            <div class="right-column elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-righttabs"
+                data-id="righttabs" data-element_type="column">
+                <div class="elementor-column-wrap elementor-element-populated">
+                    <div class="elementor-widget-wrap">
+                        <!-- Section Title -->
+                        <div class="section-title">Latest News & Resources</div>
+                        <!-- Tabs Navigation and Content -->
+                        <div data-navigation="[]" id="premium-tabs-c607875"
+                            class="premium-tabs premium-tabs-style-iconbox premium-tabs-horizontal">
+                            <div class="premium-tabs-nav horizontal">
+                                <ul class="premium-tabs-nav-list premium-tabs-horizontal">
+                                    <li class="premium-tabs-nav-list-item elementor-repeater-item-b1f58fe active"
+                                        data-list-index="0" data-content-id="#section-iconbox-0-c607875">
+                                        <a class="premium-tab-link" aria-label="#section-0-c607875"
+                                            href="#section-iconbox-0-c607875">
+                                            <i class="premium-title-icon premium-svg-nodraw fas fa-bell"
+                                                aria-hidden="true"></i>
+                                            <p class="premium-tab-title">Notification</p>
+                                        </a>
+                                    </li>
+                                    <li class="premium-tabs-nav-list-item elementor-repeater-item-df68b60"
+                                        data-list-index="1" data-content-id="#section-iconbox-1-c607875">
+                                        <a class="premium-tab-link" aria-label="#section-1-c607875"
+                                            href="#section-iconbox-1-c607875">
+                                            <i class="premium-title-icon premium-svg-nodraw fas fa-book"
+                                                aria-hidden="true"></i>
+                                            <p class="premium-tab-title">New Courses</p>
+                                        </a>
+                                    </li>
+                                    <li class="premium-tabs-nav-list-item elementor-repeater-item-f61abfa"
+                                        data-list-index="2" data-content-id="#section-iconbox-2-c607875">
+                                        <a class="premium-tab-link" aria-label="#section-2-c607875"
+                                            href="#section-iconbox-2-c607875">
+                                            <i class="premium-title-icon premium-svg-nodraw far fa-clipboard"
+                                                aria-hidden="true"></i>
+                                            <p class="premium-tab-title">Results</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="premium-content-wrap premium-tabs-horizontal">
+                                <!-- Notification Tab Content -->
+                                <section id="section-iconbox-0-c607875" class="premium-tabs-content-section active">
+                                    <div class="premium-tab-content">
+                                        <p><strong><span style="color: #000000;">» Orientation Cum Open Session for
+                                                    Students | <a href="#">Watch Here</a></span></strong></p>
+                                        <p><a
+                                                href="https://drive.google.com/file/d/19KniU4I8bQ-wZ2m8ysMooQLxzJplxpcx/view?usp=sharing"><strong><span
+                                                        style="color: #000000;">» JEE Advanced 2024 Ans Key, Paper
+                                                        Solution now available to Download</span></strong></a></p>
+                                        <p><a
+                                                href="https://drive.google.com/file/d/16Zdt-VhgetApwb7FcrwTuyCtjPTg6Pak/view?usp=sharing"><strong><span
+                                                        style="color: #000000;">» Download NEET-UG 2024 Paper with
+                                                        Answer and Solutions</span></strong></a></p>
+                                        <p><strong><span style="color: #000000;">» GEM Toppers Conclave | JEE Main &amp;
+                                                    NEET Result | Meet Top Scorers</span></strong></p>
+                                        <p><strong><span style="color: #000000;">» Get up to 90% Scholarship !! <a
+                                                        href="#">Register For Free</a></span></strong></p>
+                                    </div>
+                                </section>
+                                <!-- New Courses Tab Content -->
+                                <section id="section-iconbox-1-c607875" class="premium-tabs-content-section">
+                                    <div class="premium-tab-content">
+                                        <p><strong><span style="color: #000000;">One Year Integrated Classroom Course
+                                                    for Class XII, NEET</span></strong></p>
+                                        <p><strong><span style="color: #000000;">Two Year Integrated Classroom Course
+                                                    for Class XI to XII, NEET</span></strong></p>
+                                        <p><strong><span style="color: #000000;">One Year Integrated Classroom Course
+                                                    for Class XII, JEE (Main &amp; Advanced)</span></strong></p>
+                                    </div>
+                                </section>
+                                <!-- Results Tab Content -->
+                                <section id="section-iconbox-2-c607875" class="premium-tabs-content-section">
+                                    <div class="premium-tab-content">
+                                        <p><span style="color: #000000;"><strong>JEE (Advanced) 2023 Result Know
+                                                    More</strong></span></p>
+                                        <p><strong><span style="color: #000000;">NEET (UG) 2023 Result Know
+                                                    More</span></strong></p>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <!-- End of Tabs -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End of News and Resources Board Section -->
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8jhAXgN3eFs4l3o1Z0cW++jPCgG+dvJ9nEXNzpp3BBxp4e"
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // Tab Navigation Click Event
+            $('.premium-tabs-nav-list-item').on('click', function (e) {
+                e.preventDefault();
+
+                // Remove active class from all tabs
+                $('.premium-tabs-nav-list-item').removeClass('active');
+
+                // Add active class to the clicked tab
+                $(this).addClass('active');
+
+                // Get the target content ID
+                var target = $(this).data('content-id');
+
+                // Hide all content sections
+                $('.premium-tabs-content-section').removeClass('active');
+
+                // Show the target content section
+                $(target).addClass('active');
+            });
+
+            // Optional: Add smooth scrolling for internal links
+            $('a[href^="#"]').on('click', function (event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College News and Resources Board</title>
+    <!-- Link to external CSS -->
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: #007BFF;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .card-description {
+            flex-grow: 1;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .card-button {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007BFF;
+            padding: 10px 15px;
+            border-radius: 5px;
+            align-self: flex-start;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .card-button i {
+            margin-left: 8px;
+            transition: margin-left 0.3s ease;
+        }
+
+        .card-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        .card-button:hover i {
+            margin-left: 12px;
+        }
+
+        /* Hover Effects for Card */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .card-img {
+                height: 150px;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .card-img {
+                height: 120px;
+            }
+
+            .card-title {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!-- Optional: Link to a CSS framework like Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnH2N2ew+hfaW3kE2b2dN+6Pb5XQjzUfjS7jwJKjyslgJ23znQe6tqIQhDfAQkP6E4cZMDc1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <section class="news-resources-section">
+        <div class="container">
+            <h2 class="section-title">Latest News & Resources</h2>
+            <div class="grid-container">
+                <!-- News/Resource Card 1 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200.png?text=News+1" alt="News 1" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Upcoming College Fest</h3>
+                        <p class="card-description">Join us for our annual college fest featuring cultural performances,
+                            workshops, and more!</p>
+                        <a href="#" class="card-button">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- News/Resource Card 2 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200.png?text=Resource+1" alt="Resource 1"
+                        class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Library Resources</h3>
+                        <p class="card-description">Explore our extensive library resources available to all students,
+                            including e-books and journals.</p>
+                        <a href="#" class="card-button">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- News/Resource Card 3 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200.png?text=News+2" alt="News 2" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">New Hostel Facilities</h3>
+                        <p class="card-description">We have upgraded our hostel facilities to provide better comfort and
+                            amenities for our students.</p>
+                        <a href="#" class="card-button">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- News/Resource Card 4 -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/400x200.png?text=Resource+2" alt="Resource 2"
+                        class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Career Counseling</h3>
+                        <p class="card-description">Access our career counseling services to help you plan your future
+                            and achieve your professional goals.</p>
+                        <a href="#" class="card-button">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Add more cards as needed -->
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
